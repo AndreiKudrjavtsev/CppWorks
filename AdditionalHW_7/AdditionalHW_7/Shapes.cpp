@@ -8,9 +8,9 @@ double square::perimeter() const
 {
 	return 4 * size;
 }
-void square::info() const
+shape *square::copy() const
 {
-	std::cout << "this is a square" << std::endl;
+	return new square(x, y, size);
 }
 
 double rhomb::area() const
@@ -21,7 +21,7 @@ double rhomb::perimeter() const
 {
 	return 4 * sqrt(w*w + h*h);
 }
-void rhomb::info() const
+shape *rhomb::copy() const
 {
-	std::cout << "this is a rhomb" << std::endl;
+	return new rhomb(x, y, w, h);
 }

@@ -11,7 +11,7 @@ public:
 	{}
 	virtual double area() const = 0;
 	virtual double perimeter() const = 0;
-	virtual void info() const = 0;
+	virtual shape *copy() const = 0;
 	virtual ~shape() {}
 	// Е и еще м.б. draw() и т.д. Е
 };
@@ -24,7 +24,7 @@ public:
 	{}
 	double area() const override;
 	double perimeter() const override;
-	void info() const override;
+	shape *copy() const override;
 };
 
 class rhomb : public shape {
@@ -36,5 +36,5 @@ public:
 	{}
 	double area() const override;
 	double perimeter() const override;
-	void info() const override;
+	shape *copy() const override;
 };

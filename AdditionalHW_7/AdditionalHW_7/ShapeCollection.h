@@ -13,6 +13,7 @@ public:
 	}
 	shapeCollection& operator=(const shapeCollection& shColl) {
 		if (this != &shColl) {
+			a.clear();
 			for (auto &sh : shColl.a) {
 				a.push_back(sh->copy());
 			}	

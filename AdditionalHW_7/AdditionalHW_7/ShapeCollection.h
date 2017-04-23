@@ -23,8 +23,8 @@ public:
 		}
 	}
 
-	void add(std::unique_ptr<shape> sh) {
-		a.push_back(sh);
+	void add(std::unique_ptr<shape>& sh) {
+		a.push_back(std::move(sh));
 	}
 
 	double area() const {

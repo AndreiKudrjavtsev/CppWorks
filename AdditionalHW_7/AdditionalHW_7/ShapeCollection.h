@@ -4,13 +4,10 @@
 #pragma once
 
 class shapeCollection {
-	std::vector<shape*> a;
+	std::vector<std::unique_ptr<shape>> a;
 public:
 	shapeCollection() {};
-	~shapeCollection() {
-		for (auto &sh : a)
-			delete sh;
-	}
+	//~shapeCollection() {};
 	shapeCollection& operator=(const shapeCollection& shColl) {
 		if (this != &shColl) {
 			a.clear();
@@ -21,19 +18,18 @@ public:
 		return *this;
 	}
 	shapeCollection(const shapeCollection& shColl) {
-		std::vector<shape*> newOne;
 		for (auto &sh : shColl.a) {
 			a.push_back(sh->copy());
 		}
 	}
-	void add(shape* sh)
-	{
+
+	void add(std::unique_ptr<shape> sh) {
 		a.push_back(sh);
 	}
-	double area() const
-	{
+
+	double area() const {
 		double sum = 0;
-		for (auto sh : a)
+		for (auto &sh : a)
 			sum += sh->area();
 		return sum;
 	}

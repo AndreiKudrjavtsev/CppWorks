@@ -51,8 +51,8 @@ int main() {
 	avrgScore();
 
 	shapeCollection sc;
-	sc.add(new rhomb(1, 3, 5, 2));
-	sc.add(new square(0, 0, 10));
+	sc.add(unique_ptr<shape> (new rhomb(1, 3, 5, 2)));
+	sc.add(unique_ptr<shape> (new square(0, 0, 10)));
 	cout << sc.area() << endl;	shapeCollection sc1(sc);
 	shapeCollection sc2 = sc;
 	cout << sc1.area() << endl;

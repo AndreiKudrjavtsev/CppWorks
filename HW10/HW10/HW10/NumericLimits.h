@@ -1,5 +1,5 @@
-#include <limits>
 #pragma once
+#include <limits>
 
 template<class T>
 class NumericLimits {

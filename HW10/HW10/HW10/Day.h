@@ -1,7 +1,5 @@
-#include <iostream>
-#include <string>
-#include <sstream>
 #pragma once
+#include <string>
 
 class DayOfYear {
 public:

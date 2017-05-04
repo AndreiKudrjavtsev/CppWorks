@@ -13,7 +13,7 @@ void commonBook() {
 	string book;
 	while (true) {
 		cin >> name >> book;
-		auto ins = people.insert(pair<string, string>(book, name));
+		auto ins = people.insert({ book, name });
 		if (ins.second == false) {
 			cout << "Интересы совпадают: " << ins.first->second
 				<< " " << name << endl;
@@ -28,7 +28,7 @@ void commonInterests() {
 	while (true) {
 		cin >> name >> book >> band;
 		auto interests = pair<string, string>(book, band);
-		auto ins = people.insert(pair<pair<string, string>, string>(interests, name));
+		auto ins = people.insert({ interests, name });
 		if (ins.second == false) {
 			cout << "Интересы совпадают: " << ins.first->second
 				<< " " << name << endl;
@@ -43,8 +43,8 @@ void commonInterest() {
 	string name, book, band;
 	while (true) {
 		cin >> name >> book >> band;
-		auto insBook = peopleBook.insert(pair<string, string>(book, name));
-		auto insBand = peopleBand.insert(pair<string, string>(band, name));
+		auto insBook = peopleBook.insert({ book, name });
+		auto insBand = peopleBand.insert({ band, name });
 		if (insBook.second == false || insBand.second == false) {
 			cout << "Интересы частично совпадают: " << insBook.first->second
 				<< " " << name << endl;

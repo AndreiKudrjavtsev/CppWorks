@@ -1,4 +1,5 @@
 #include"Day.h"
+#include <sstream>
 
 DayOfYear::DayOfYear(std::string date) {
 	std::string num;
